@@ -257,7 +257,7 @@ export default function Assistant() {
             <button
               type="button"
               onClick={() => signInWithRedirect()}
-              className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg cursor-pointer"
+              className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg cursor-pointer pressable"
             >
               Login
             </button>
@@ -327,7 +327,7 @@ export default function Assistant() {
           <button
             onClick={send}
             disabled={loading}
-            className="bg-blue-600 text-white px-6 rounded-lg"
+            className="bg-blue-600 text-white px-6 rounded-lg pressable"
           >
             Send
           </button>

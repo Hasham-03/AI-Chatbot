@@ -1,1 +1,35 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+/* Press (click) feedback for buttons */
+.pressable {
+	transition: transform 120ms cubic-bezier(.2,.8,.2,1), box-shadow 120ms, opacity 120ms;
+	will-change: transform;
+}
+
+.pressable:active {
+	transform: translateY(1px) scale(0.985);
+}
+
+.pressable:focus-visible {
+	outline: 2px solid rgba(59,130,246,0.6);
+	outline-offset: 2px;
+	box-shadow: 0 6px 18px rgba(2,6,23,0.08);
+}
+
+/* Disable press effect when button is disabled */
+.pressable[disabled],
+button[disabled].pressable {
+	opacity: 0.7;
+	cursor: not-allowed;
+	transform: none !important;
+	box-shadow: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.pressable {
+		transition: none !important;
+	}
+	.pressable:active {
+		transform: none !important;
+	}
+}
